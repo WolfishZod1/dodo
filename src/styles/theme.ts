@@ -1,23 +1,68 @@
 import { createTheme } from "@mui/material";
-import DodoVarible from "@assets/fonts/DodoVariable.ttf";
+import DodoTtf from "@assets/fonts/DoDo-VF.ttf";
+import DodoWoff2 from "@assets/fonts/DoDo-VF.woff2";
 
 export const theme = createTheme({
+   palette: {
+      primary: {
+         main: "rgb(255, 105, 0);",
+      },
+      text: {
+         primary: "rgb(0, 0, 0)",
+      },
+   },
    typography: {
-     fontFamily: 'Dodo, Arial',
+      fontFamily: "Dodo Rounded, sans-serif",
+      body1: {
+         fontSize: "0.875rem",
+         lineHeight: 1,
+      },
    },
    components: {
-     MuiCssBaseline: {
-       styleOverrides: `
+      MuiCssBaseline: {
+         styleOverrides: `
          @font-face {
-           font-family: 'Raleway';
-           font-style: normal;
-           font-display: swap;
-           font-weight: 400;
-           src: local('Dodo'), local('Dodo-Regular'), url(${DodoVarible}) format('ttf');
-           unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
-         }
+          font-family: 'Dodo Rounded';
+          src: url(${DodoTtf}) format("truetype");
+          src: url(${DodoWoff2}) format("woff2-variations");
+          font-weight: 100 700;
+          font-stretch: 0% 300%;
+          font-style: oblique 0deg 20deg
+        }
        `,
-     },
-   },
+      },
 
- });
+      MuiLink: {
+         defaultProps: {
+            underline: "none",
+            color: "text",
+            variant: "body1",
+         },
+         styleOverrides: {
+            root: ({ theme }) => ({
+               ":hover": {
+                  color: theme.palette.primary.main,
+                  fill: theme.palette.primary.main,
+               },
+               fontWeight: "600",
+
+               transition: "color 0.25s ease",
+            }),
+         },
+         // variants: [
+         //    {
+         //       props: { variant: "colored" },
+         //       style: { color: "rgb(255, 105, 0);", fontSize: "0.75rem" },
+         //    },
+         //    {
+         //       props: { variant: "colored", fontSize: "1.125rem" },
+         //       style: {
+         //          color: "rgb(255, 105, 0);",
+         //          fontSize: "1.125rem",
+         //          ":hover": { color: "rgb(232, 97, 0);" },
+         //       },
+         //    },
+         // ],
+      },
+   },
+});
