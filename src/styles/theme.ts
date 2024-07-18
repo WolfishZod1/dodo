@@ -64,5 +64,17 @@ export const theme = createTheme({
          //    },
          // ],
       },
+      MuiAppBar: {
+         defaultProps: {
+            position: "sticky",
+            variant: "elevation",
+            sx: {
+               height: "58px",
+               backgroundColor: "rgba(255, 255, 255, 0.75)",
+               boxShadow: "0px 4px 5px rgba(6, 5, 50, 0.1)",
+               backdropFilter: "blur(20px)",
+            },
+         },
+      },
    },
 });
