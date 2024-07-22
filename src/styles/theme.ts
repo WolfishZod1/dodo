@@ -17,6 +17,11 @@ export const theme = createTheme({
          fontSize: "0.875rem",
          lineHeight: 1,
       },
+      h4: {
+         fontSize: "2.25rem",
+         fontWeight: 600,
+         lineHeight: "50.4px",
+      },
    },
    components: {
       MuiCssBaseline: {
@@ -75,6 +80,56 @@ export const theme = createTheme({
                backdropFilter: "blur(20px)",
             },
          },
+      },
+      MuiButton: {
+         defaultProps: {},
+         variants: [
+            {
+               props: { variant: "text" },
+               style: {
+                  backgroundColor: "rgb(255, 240, 230)",
+                  color: "rgb(209, 87, 0)",
+                  borderRadius: "9999px",
+                  boxShadow: "none",
+                  fontSize: "1rem",
+                  textTransform: "capitalize",
+                  padding: "8px 20px 8px 20px",
+                  lineHeight: "24px",
+                  width: "120px",
+                  ":hover": {
+                     backgroundColor: "rgb(255, 210, 179)",
+                     color: "rgb(209, 87, 0)",
+                  },
+               },
+            },
+            {
+               props: { variant: "contained" },
+               style: {
+                  backgroundColor: "rgb(255, 105, 0)",
+                  color: "rgb(255, 255, 255)",
+                  borderRadius: "9999px",
+                  position: "absolute",
+                  boxShadow: "none",
+                  fontSize: "1rem",
+                  textTransform: "capitalize",
+                  padding: "8px 20px 8px 20px",
+                  lineHeight: "24px",
+                  ":hover": {
+                     backgroundColor: "rgb(232, 97, 0)",
+                     color: "rgb(255, 255, 255)",
+                  },
+               },
+            },
+            {
+               props: { variant: "outlined" },
+               style: {
+                  border: "none",
+                  ":hover": {
+                     border: "none",
+                  },
+               },
+            },
+         ],
       },
    },
 });

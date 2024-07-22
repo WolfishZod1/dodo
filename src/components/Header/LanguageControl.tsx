@@ -13,6 +13,7 @@ export function LanguageControl() {
             },
             padding: "0",
          }}
+         variant="outlined"
       >
          <LanguageIcon sx={{ marginRight: "22px" }} />
          <span

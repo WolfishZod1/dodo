@@ -1,6 +1,7 @@
 import { Header } from "@components/Header/Header";
 import { AppBar } from "@components/AppBar/AppBar";
 import { StoriesList } from "@components/StoriesList/StoriesList";
+import { Catalog } from "@components/Catalog/Catalog";
 
 export function MainPage() {
    return (
@@ -8,20 +9,7 @@ export function MainPage() {
          <Header />
          <AppBar />
          <StoriesList />
-         <Header />
-         <Header />
-         <Header />
-         <Header />
-         <Header />
-         <Header />
-         <Header />
-         <Header />
-         <Header />
-         <Header />
-         <Header />
-         <Header />
-         <Header />
-         <Header />
+         <Catalog />
       </>
    );
 }

@@ -7,7 +7,7 @@ import logo6 from "@assets/img/logo-6.png";
 import logo7 from "@assets/img/logo-7.png";
 import logo8 from "@assets/img/logo-8.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y, FreeMode } from "swiper/modules";
+import { Navigation, Pagination, Scrollbar, FreeMode } from "swiper/modules";
 import "swiper/css/navigation";
 import "./scroll.css";
 
@@ -24,7 +24,7 @@ export function SlideImages() {
 
    return (
       <Swiper
-         modules={[Navigation, Pagination, Scrollbar, A11y, FreeMode]}
+         modules={[Navigation, Pagination, Scrollbar, FreeMode]}
          spaceBetween={6}
          slidesPerView={6.33}
          navigation={true}
