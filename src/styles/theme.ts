@@ -5,10 +5,21 @@ import DodoWoff2 from "@assets/fonts/DoDo-VF.woff2";
 export const theme = createTheme({
    palette: {
       primary: {
-         main: "rgb(255, 105, 0);",
+         main: "rgb(255, 105, 0)",
+         dark: "rgb(232, 97, 0)",
+      },
+      secondary: {
+         main: "rgb(255, 240, 230)",
+         dark: "rgb(255, 210, 179)",
+      },
+      info: {
+         main: "rgba(255, 255, 255, 0.75)",
+         dark: "rgba(6, 5, 50, 0.1)",
       },
       text: {
          primary: "rgb(0, 0, 0)",
+         secondary: "rgb(255, 255, 255)",
+         disabled: "rgb(209, 87, 0)",
       },
    },
    typography: {
@@ -71,24 +82,28 @@ export const theme = createTheme({
       },
       MuiAppBar: {
          defaultProps: {
-            position: "sticky",
             variant: "elevation",
-            sx: {
-               height: "58px",
-               backgroundColor: "rgba(255, 255, 255, 0.75)",
-               boxShadow: "0px 4px 5px rgba(6, 5, 50, 0.1)",
-               backdropFilter: "blur(20px)",
-            },
          },
+         variants: [
+            {
+               props: { variant: "elevation" },
+               style: ({ theme }) => ({
+                  height: "58px",
+                  backgroundColor: theme.palette.info.main,
+                  boxShadow: `0px 4px 5px ${theme.palette.info.dark}`,
+                  backdropFilter: "blur(20px)",
+                  position: "sticky",
+               }),
+            },
+         ],
       },
       MuiButton: {
-         defaultProps: {},
          variants: [
             {
                props: { variant: "text" },
-               style: {
-                  backgroundColor: "rgb(255, 240, 230)",
-                  color: "rgb(209, 87, 0)",
+               style: ({ theme }) => ({
+                  backgroundColor: theme.palette.secondary.main,
+                  color: theme.palette.text.disabled,
                   borderRadius: "9999px",
                   boxShadow: "none",
                   fontSize: "1rem",
@@ -97,16 +112,16 @@ export const theme = createTheme({
                   lineHeight: "24px",
                   width: "120px",
                   ":hover": {
-                     backgroundColor: "rgb(255, 210, 179)",
-                     color: "rgb(209, 87, 0)",
+                     backgroundColor: theme.palette.secondary.dark,
+                     color: theme.palette.text.disabled,
                   },
-               },
+               }),
             },
             {
                props: { variant: "contained" },
-               style: {
-                  backgroundColor: "rgb(255, 105, 0)",
-                  color: "rgb(255, 255, 255)",
+               style: ({ theme }) => ({
+                  backgroundColor: theme.palette.primary.main,
+                  color: theme.palette.text.secondary,
                   borderRadius: "9999px",
                   position: "absolute",
                   boxShadow: "none",
@@ -115,10 +130,10 @@ export const theme = createTheme({
                   padding: "8px 20px 8px 20px",
                   lineHeight: "24px",
                   ":hover": {
-                     backgroundColor: "rgb(232, 97, 0)",
-                     color: "rgb(255, 255, 255)",
+                     backgroundColor: theme.palette.primary.dark,
+                     color: theme.palette.text.secondary,
                   },
-               },
+               }),
             },
             {
                props: { variant: "outlined" },
