@@ -1,7 +1,9 @@
-import type { TypographyPropsVariantOverrides } from "@mui/material";
-
-declare module "@mui/material" {
+declare module "@mui/material/styles" {
    interface TypographyPropsVariantOverrides {
       colored: true;
+   }
+
+   interface Palette {
+      text: PaletteOptions & { alternative: string };
    }
 }

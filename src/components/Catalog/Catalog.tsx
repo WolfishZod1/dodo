@@ -9,6 +9,7 @@ import { ChildrenLove } from "./ChildrenLove";
 import { Bevereges } from "./Beverages";
 import { Sauces } from "./Sauces";
 import { Other } from "./Other";
+import { Delivery } from "@components/Catalog/Delivery";
 
 export function Catalog() {
    return (
@@ -27,6 +28,7 @@ export function Catalog() {
          <Bevereges />
          <Sauces />
          <Other />
+         <Delivery />
       </Box>
    );
 }

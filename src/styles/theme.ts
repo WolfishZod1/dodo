@@ -19,7 +19,7 @@ export const theme = createTheme({
       text: {
          primary: "rgb(0, 0, 0)",
          secondary: "rgb(255, 255, 255)",
-         disabled: "rgb(209, 87, 0)",
+         alternative: "rgb(209, 87, 0)",
       },
    },
    typography: {
@@ -103,7 +103,7 @@ export const theme = createTheme({
                props: { variant: "text" },
                style: ({ theme }) => ({
                   backgroundColor: theme.palette.secondary.main,
-                  color: theme.palette.text.disabled,
+                  color: theme.palette.text.alternative,
                   borderRadius: "9999px",
                   boxShadow: "none",
                   fontSize: "1rem",
@@ -113,7 +113,7 @@ export const theme = createTheme({
                   width: "120px",
                   ":hover": {
                      backgroundColor: theme.palette.secondary.dark,
-                     color: theme.palette.text.disabled,
+                     color: theme.palette.text.alternative,
                   },
                }),
             },
