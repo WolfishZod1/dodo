@@ -1,9 +1,21 @@
 import { Box, Typography } from "@mui/material";
 import { ProductCard } from "./ProductCard";
-import pizza from "@assets/img/pizza.png";
 import "./ProductCard.css";
+import { useEffect } from "react";
+import { fetchProducts } from "@slices/productsCatalog.slice/productsCatalog.thunks";
+import { useAppDispatch } from "@slices/store";
+import { useSelector } from "react-redux";
+import { selectProducts } from "@selectors/productsCatalog.selectors";
 
 export function Pizza() {
+   const dispatch = useAppDispatch();
+
+   const products = useSelector(selectProducts);
+
+   useEffect(() => {
+      dispatch(fetchProducts());
+   }, [dispatch]);
+
    return (
       <Box
          sx={{
@@ -20,36 +32,16 @@ export function Pizza() {
          >
             Пиццы
          </Typography>
-         <ProductCard
-            text="Пицца Береке Ет"
-            ingredients="Пряная говядина, томаты, красный лук, моцарелла, фирменный соус альфредо, чеснок, итальянские травы"
-            price={3150}
-            picture={pizza}
-         />
-         <ProductCard
-            text="Пицца Береке Ет"
-            ingredients="Пряная говядина, томаты, красный лук, моцарелла, фирменный соус альфредо, чеснок, итальянские травы"
-            price={3150}
-            picture={pizza}
-         />
-         <ProductCard
-            text="Пицца Береке Ет"
-            ingredients="Пряная говядина, томаты, красный лук, моцарелла, фирменный соус альфредо, чеснок, итальянские травы"
-            price={3150}
-            picture={pizza}
-         />
-         <ProductCard
-            text="Пицца Береке Ет"
-            ingredients="Пряная говядина, томаты, красный лук, моцарелла, фирменный соус альфредо, чеснок, итальянские травы"
-            price={3150}
-            picture={pizza}
-         />
-         <ProductCard
-            text="Пицца Береке Ет"
-            ingredients="Пряная говядина, томаты, красный лук, моцарелла, фирменный соус альфредо, чеснок, итальянские травы"
-            price={3150}
-            picture={pizza}
-         />
+
+         {products.map((p, i) => (
+            <ProductCard
+               key={i}
+               text={p.name}
+               ingredients={p.description}
+               price={p.price}
+               picture={p.picture}
+            />
+         ))}
       </Box>
    );
 }
