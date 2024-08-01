@@ -1,6 +1,11 @@
 import { Box, Typography } from "@mui/material";
+import { selectProductsCombos } from "@selectors/productsCatalog.selectors";
+import { useSelector } from "react-redux";
+import { ProductCard } from "./ProductCard";
 
 export function Combo() {
+   const combos = useSelector(selectProductsCombos);
+
    return (
       <Box
          sx={{
@@ -17,6 +22,16 @@ export function Combo() {
          >
             Комбо
          </Typography>
+
+         {combos.map((combo, i) => (
+            <ProductCard
+               key={i}
+               text={combo.name}
+               ingredients={combo.description}
+               price={combo.price}
+               picture={combo.picture}
+            ></ProductCard>
+         ))}
       </Box>
    );
 }

@@ -10,8 +10,17 @@ import { Bevereges } from "./Beverages";
 import { Sauces } from "./Sauces";
 import { Other } from "./Other";
 import { Delivery } from "@components/Catalog/Delivery";
+import { useAppDispatch } from "@slices/store";
+import { useEffect } from "react";
+import { fetchProducts } from "@slices/productsCatalog.slice/productsCatalog.thunks";
 
 export function Catalog() {
+   const dispatch = useAppDispatch();
+
+   useEffect(() => {
+      dispatch(fetchProducts());
+   }, [dispatch]);
+
    return (
       <Box
          sx={{

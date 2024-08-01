@@ -1,6 +1,10 @@
 import { Box, Typography } from "@mui/material";
+import { selectProductsBeverages } from "@selectors/productsCatalog.selectors";
+import { useSelector } from "react-redux";
+import { ProductCard } from "./ProductCard";
 
 export function Bevereges() {
+   const beverages = useSelector(selectProductsBeverages);
    return (
       <Box
          sx={{
@@ -17,6 +21,15 @@ export function Bevereges() {
          >
             Напитки
          </Typography>
+         {beverages.map((beverage, i) => (
+            <ProductCard
+               key={i}
+               text={beverage.name}
+               ingredients={beverage.description}
+               price={beverage.price}
+               picture={beverage.picture}
+            ></ProductCard>
+         ))}
       </Box>
    );
 }

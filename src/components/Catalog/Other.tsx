@@ -1,6 +1,10 @@
 import { Box, Typography } from "@mui/material";
+import { ProductCard } from "./ProductCard";
+import { useSelector } from "react-redux";
+import { selectProductsOthers } from "@selectors/productsCatalog.selectors";
 
 export function Other() {
+   const others = useSelector(selectProductsOthers);
    return (
       <Box
          sx={{
@@ -17,6 +21,15 @@ export function Other() {
          >
             Другие товары
          </Typography>
+         {others.map((other, i) => (
+            <ProductCard
+               key={i}
+               text={other.name}
+               ingredients={other.description}
+               price={other.price}
+               picture={other.picture}
+            ></ProductCard>
+         ))}
       </Box>
    );
 }

@@ -2,11 +2,21 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchProducts } from "./productsCatalog.thunks";
 
 interface ProductsCatalogState {
-   products: Product[];
+   products: ProductsCatalog;
 }
 
 const initialState: ProductsCatalogState = {
-   products: [],
+   products: {
+      pizza: [],
+      combos: [],
+      snacks: [],
+      cocktails: [],
+      coffee: [],
+      childrenLove: [],
+      beverages: [],
+      sauces: [],
+      others: [],
+   },
 };
 
 export const productsCatalogSlice = createSlice({
