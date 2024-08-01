@@ -7,6 +7,7 @@ export function Other() {
    const others = useSelector(selectProductsOthers);
    return (
       <Box
+         id="other"
          sx={{
             display: "flex",
             flexWrap: "wrap",

@@ -7,6 +7,7 @@ export function ChildrenLove() {
    const loveProducts = useSelector(selectProductsChildrenLove);
    return (
       <Box
+         id="childrenLove"
          sx={{
             display: "flex",
             flexWrap: "wrap",

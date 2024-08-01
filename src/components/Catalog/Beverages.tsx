@@ -7,6 +7,7 @@ export function Bevereges() {
    const beverages = useSelector(selectProductsBeverages);
    return (
       <Box
+         id="beverages"
          sx={{
             display: "flex",
             flexWrap: "wrap",

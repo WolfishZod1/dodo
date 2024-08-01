@@ -54,6 +54,16 @@ export const theme = createTheme({
             color: "text",
             variant: "body1",
          },
+         variants: [
+            {
+               props: { variant: "body1" },
+               style: {
+                  underline: "none",
+                  color: "text",
+                  variant: "body1",
+               },
+            },
+         ],
          styleOverrides: {
             root: ({ theme }) => ({
                ":hover": {

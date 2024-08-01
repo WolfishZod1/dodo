@@ -7,6 +7,7 @@ export function Coffee() {
    const coffee = useSelector(selectProductsCoffee);
    return (
       <Box
+         id="coffee"
          sx={{
             display: "flex",
             flexWrap: "wrap",

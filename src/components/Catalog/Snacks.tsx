@@ -8,6 +8,7 @@ export function Snacks() {
 
    return (
       <Box
+         id="snacks"
          sx={{
             display: "flex",
             flexWrap: "wrap",

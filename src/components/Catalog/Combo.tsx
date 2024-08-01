@@ -8,6 +8,7 @@ export function Combo() {
 
    return (
       <Box
+         id="combo"
          sx={{
             display: "flex",
             flexWrap: "wrap",

@@ -13,6 +13,7 @@ import { Delivery } from "@components/Catalog/Delivery";
 import { useAppDispatch } from "@slices/store";
 import { useEffect } from "react";
 import { fetchProducts } from "@slices/productsCatalog.slice/productsCatalog.thunks";
+import { Dessert } from "./Dessert";
 
 export function Catalog() {
    const dispatch = useAppDispatch();
@@ -33,6 +34,7 @@ export function Catalog() {
          <Snacks />
          <Cocktalis />
          <Coffee />
+         <Dessert />
          <ChildrenLove />
          <Bevereges />
          <Sauces />

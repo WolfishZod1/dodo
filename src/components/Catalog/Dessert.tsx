@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 export function Dessert() {
    return (
       <Box
+         id="dessert"
          sx={{
             display: "flex",
             flexWrap: "wrap",

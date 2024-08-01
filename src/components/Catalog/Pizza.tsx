@@ -9,6 +9,7 @@ export function Pizza() {
 
    return (
       <Box
+         id="pizza"
          sx={{
             display: "flex",
             flexWrap: "wrap",

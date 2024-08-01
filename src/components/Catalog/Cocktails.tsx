@@ -7,6 +7,7 @@ export function Cocktalis() {
    const cocktalis = useSelector(selectProductsCocktails);
    return (
       <Box
+         id="cocktails"
          sx={{
             display: "flex",
             flexWrap: "wrap",
