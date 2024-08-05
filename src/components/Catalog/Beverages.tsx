@@ -29,6 +29,8 @@ export function Bevereges() {
                ingredients={beverage.description}
                price={beverage.price}
                picture={beverage.picture}
+               id={i}
+               type="beverages"
             ></ProductCard>
          ))}
       </Box>

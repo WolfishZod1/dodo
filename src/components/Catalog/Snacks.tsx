@@ -31,6 +31,8 @@ export function Snacks() {
                ingredients={snack.description}
                price={snack.price}
                picture={snack.picture}
+               id={i}
+               type="snacks"
             ></ProductCard>
          ))}
       </Box>

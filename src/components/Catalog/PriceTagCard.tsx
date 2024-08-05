@@ -1,10 +1,18 @@
+import { ModalProduct } from "@components/modalComponents/modalProduct/ModalProduct";
 import { Box, Button, Typography } from "@mui/material";
+import { useState } from "react";
 
 interface Props {
    price: number;
+   id: number;
+   type: ProductsCategories;
 }
 
-export function PriceTagCard({ price }: Props) {
+export function PriceTagCard({ price, id, type }: Props) {
+   const [open, setOpen] = useState(false);
+
+   const onClose = () => setOpen(false);
+
    return (
       <Box
          sx={{
@@ -26,7 +34,21 @@ export function PriceTagCard({ price }: Props) {
          >
             от {price} тг.
          </Typography>
-         <Button variant="text">Выбрать</Button>
+         <Button
+            variant="text"
+            onClick={() => {
+               setOpen(true);
+            }}
+         >
+            Выбрать
+         </Button>
+
+         <ModalProduct
+            open={open}
+            onClose={onClose}
+            id={id}
+            type={type}
+         />
       </Box>
    );
 }

@@ -29,6 +29,8 @@ export function Other() {
                ingredients={other.description}
                price={other.price}
                picture={other.picture}
+               id={i}
+               type="others"
             ></ProductCard>
          ))}
       </Box>

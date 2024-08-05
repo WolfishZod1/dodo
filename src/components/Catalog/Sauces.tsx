@@ -29,6 +29,8 @@ export function Sauces() {
                ingredients={sauce.description}
                price={sauce.price}
                picture={sauce.picture}
+               id={i}
+               type="sauces"
             ></ProductCard>
          ))}
       </Box>

@@ -29,6 +29,8 @@ export function Cocktalis() {
                ingredients={cocktail.description}
                price={cocktail.price}
                picture={cocktail.picture}
+               id={i}
+               type="cocktails"
             ></ProductCard>
          ))}
       </Box>

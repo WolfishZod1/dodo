@@ -31,6 +31,8 @@ export function Combo() {
                ingredients={combo.description}
                price={combo.price}
                picture={combo.picture}
+               id={i}
+               type="combos"
             ></ProductCard>
          ))}
       </Box>

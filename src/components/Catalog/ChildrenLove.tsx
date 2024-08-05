@@ -29,6 +29,8 @@ export function ChildrenLove() {
                ingredients={product.description}
                price={product.price}
                picture={product.picture}
+               id={i}
+               type="childrenLove"
             ></ProductCard>
          ))}
       </Box>

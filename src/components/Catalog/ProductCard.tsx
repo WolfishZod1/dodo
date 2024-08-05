@@ -7,9 +7,11 @@ interface Props {
    price: number;
    picture: string;
    ingredients: string;
+   id: number;
+   type: ProductsCategories;
 }
 
-export function ProductCard({ text, ingredients, price, picture }: Props) {
+export function ProductCard({ text, ingredients, price, picture, id, type }: Props) {
    return (
       <Box
          sx={{
@@ -26,7 +28,11 @@ export function ProductCard({ text, ingredients, price, picture }: Props) {
             ingredients={ingredients}
             picture={picture}
          />
-         <PriceTagCard price={price} />
+         <PriceTagCard
+            price={price}
+            id={id}
+            type={type}
+         />
       </Box>
    );
 }

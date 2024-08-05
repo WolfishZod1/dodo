@@ -1,7 +1,7 @@
 interface ProductsCatalog {
    pizza: Product[];
    combos: Product[];
-   snacks: Proudct[];
+   snacks: Product[];
    cocktails: Product[];
    coffee: Product[];
    childrenLove: Product[];
@@ -9,3 +9,5 @@ interface ProductsCatalog {
    sauces: Product[];
    others: Product[];
 }
+
+type ProductsCategories = keyof ProductsCatalog;

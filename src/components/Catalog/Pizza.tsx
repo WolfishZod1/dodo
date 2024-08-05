@@ -32,6 +32,8 @@ export function Pizza() {
                ingredients={pizza.description}
                price={pizza.price}
                picture={pizza.picture}
+               id={i}
+               type="pizza"
             />
          ))}
       </Box>
