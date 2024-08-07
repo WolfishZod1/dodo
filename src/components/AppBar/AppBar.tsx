@@ -1,5 +1,5 @@
 import { AppBar as MuiAppBar, Toolbar } from "@mui/material";
-import { Basket } from "./Basket";
+import { BasketButton } from "./BasketButton";
 import { LinkProducts } from "./LinkProducts";
 
 export function AppBar() {
@@ -13,7 +13,7 @@ export function AppBar() {
             }}
          >
             <LinkProducts />
-            <Basket />
+            <BasketButton />
          </Toolbar>
       </MuiAppBar>
    );

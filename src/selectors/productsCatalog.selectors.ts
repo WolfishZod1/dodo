@@ -1,4 +1,3 @@
-import { createSelector } from "@reduxjs/toolkit";
 import { RootState } from "@slices/store";
 
 export const selectProductsPizza = (state: RootState) => state.productsCatalog.products.pizza;

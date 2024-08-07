@@ -5,20 +5,24 @@ import SizeProductToggle from "./SizeProductToggle";
 import TypeProductToggle from "./TypeProductToggle";
 import { AddIngredients } from "./AddIngredients";
 import { useSelector } from "react-redux";
-import { RootState } from "@slices/store";
 import { PictureProduct } from "./PictureProduct";
+import { useState } from "react";
+import { selectProductsCatalogId } from "@selectors/productsCatalogId.selectors";
 
 interface Props {
    open: boolean;
    onClose: () => void;
    id: number;
    type: ProductsCategories;
+   price: number;
 }
 
-export function ModalProduct({ open, onClose, id, type }: Props) {
-   const product = useSelector((s: RootState) =>
-      s.productsCatalog.products[type].find((p, i) => i === id),
-   );
+export function ModalProduct({ open, onClose, id, type, price }: Props) {
+   const [sizeProduct, setSizeProduct] = useState(30);
+
+   const [dough, setDough] = useState("традиционное");
+
+   const product = useSelector(selectProductsCatalogId(id, type));
 
    if (!product) return null;
 
@@ -74,17 +78,23 @@ export function ModalProduct({ open, onClose, id, type }: Props) {
                               lineHeight: "20px",
                            }}
                         >
-                           30, традиционное тесто 30, 510 г
+                           {sizeProduct}, {dough} тесто{" "}
+                           {dough === "тонкое" ? sizeProduct - 5 : sizeProduct},{" "}
+                           {sizeProduct * 35 - 535} г
                         </Typography>
                         <Typography sx={{ marginBottom: "14px", lineHeight: "20px" }}>
                            {product.description}
                         </Typography>
-                        <SizeProductToggle />
-                        <TypeProductToggle />
+                        <SizeProductToggle choiceSize={setSizeProduct} />
+                        <TypeProductToggle choiceType={setDough} />
                         <AddIngredients />
                      </Box>
                   </Box>
-                  <DispatchToBasket />
+                  <DispatchToBasket
+                     price={
+                        sizeProduct === 25 ? price : sizeProduct === 30 ? price * 1.5 : price * 1.9
+                     }
+                  />
                </Box>
             </Box>
             <CloseButton onClose={onClose} />

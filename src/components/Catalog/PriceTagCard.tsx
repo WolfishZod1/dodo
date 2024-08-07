@@ -48,6 +48,7 @@ export function PriceTagCard({ price, id, type }: Props) {
             onClose={onClose}
             id={id}
             type={type}
+            price={price}
          />
       </Box>
    );

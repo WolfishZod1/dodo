@@ -1,7 +1,11 @@
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
-export default function TypeProductToggle() {
+interface Props {
+   choiceType: (type: string) => void;
+}
+
+export default function TypeProductToggle({ choiceType }: Props) {
    const [alignment, setAlignment] = React.useState<string | null>("left");
 
    const handleAlignment = (event: React.MouseEvent<HTMLElement>, newAlignment: string | null) => {
@@ -28,6 +32,7 @@ export default function TypeProductToggle() {
             value="left"
             aria-label="left aligned"
             sx={{ lineHeight: "32px", textTransform: "capitalize", border: "0", width: "170px" }}
+            onClick={() => choiceType("традиционное")}
          >
             Традиционное
          </ToggleButton>
@@ -35,6 +40,7 @@ export default function TypeProductToggle() {
             value="right"
             aria-label="right aligned"
             sx={{ lineHeight: "32px", textTransform: "capitalize", border: "0", width: "170px" }}
+            onClick={() => choiceType("тонкое")}
          >
             Тонкое
          </ToggleButton>
