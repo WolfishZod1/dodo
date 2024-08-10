@@ -1,6 +1,17 @@
 import { Box, Typography } from "@mui/material";
+import { selectProductsCatalogId } from "@selectors/productsCatalogId.selectors";
+import { useSelector } from "react-redux";
 
-export function FillingInfo() {
+interface Props {
+   size: number;
+   dough: string;
+   id: number;
+   type: ProductsCategories;
+}
+
+export function FillingInfo({ size, dough, id, type }: Props) {
+   const product = useSelector(selectProductsCatalogId(id, type));
+
    return (
       <Box
          sx={{
@@ -11,13 +22,13 @@ export function FillingInfo() {
       >
          <img
             style={{ width: "64px", height: "64px", marginRight: "16px" }}
-            src="https://media.dodostatic.net/image/r:233x233/11EF01FD3C2AC8E791770181C4A9C04D.avif"
+            src={product?.picture}
          />
          <Box sx={{ display: "flex", flexFlow: "column" }}>
             <Typography
                sx={{ fontWeight: 600, fontSize: "16px", lineHeight: "20px", marginBottom: "4px" }}
             >
-               Креветки со сладким чили
+               {product?.name}
             </Typography>
             <Typography
                sx={{
@@ -28,7 +39,7 @@ export function FillingInfo() {
                   whiteSpace: "pre-wrap",
                }}
             >
-               30, традиционное тесто 30, 630 г
+               {size}, {dough} тесто {dough === "тонкое" ? size - 5 : size}, {size * 35 - 535} г
             </Typography>
          </Box>
       </Box>

@@ -1,8 +1,9 @@
 import { Cross } from "@components/SvgIcon/Сross";
 import { Button, Drawer } from "@mui/material";
 import { EmptyBasket } from "./EmptyBasket";
-import { useState } from "react";
 import { FilledBasket } from "./FilledBasket";
+import { useSelector } from "react-redux";
+import { selectProductBasket } from "@selectors/productsBasket.selector";
 
 interface Props {
    open: boolean;
@@ -10,14 +11,14 @@ interface Props {
 }
 
 export function Basket({ open, onClose }: Props) {
+   const products = useSelector(selectProductBasket);
+
    let basket;
 
-   const [currentBasket, setCurrentBasket] = useState("filled");
-
-   if (currentBasket === "empty") {
+   if (products.length === 0) {
       basket = <EmptyBasket />;
    } else {
-      basket = <FilledBasket />;
+      basket = <FilledBasket products={products} />;
    }
 
    return (

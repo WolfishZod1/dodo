@@ -3,4 +3,5 @@ interface Product {
    price: number;
    picture: string;
    description: string;
+   count: number;
 }

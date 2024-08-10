@@ -2,8 +2,36 @@ import { SmallCross } from "@components/SvgIcon/SmallCross";
 import { Box, Button, Link, Typography } from "@mui/material";
 import { FillingInfo } from "./FillingInfo";
 import { CountProducts } from "./CountProducts";
+import { useAppDispatch } from "@slices/store";
+import { deleteProduct } from "@slices/productsBasket.slice/productsBasket.slice";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { selectProductCount } from "@selectors/productsBasket.selector";
+import { ModalProduct } from "@components/modalComponents/modalProduct/ModalProduct";
 
-export function Filling() {
+interface Props {
+   price: number;
+   size: number;
+   dough: string;
+   id: number;
+   type: ProductsCategories;
+   index: number;
+}
+
+export function Filling({ price, size, dough, id, type, index }: Props) {
+   const dispatch = useAppDispatch();
+   const deleteCurrentProduct = () => dispatch(deleteProduct(index));
+
+   const count = useSelector(selectProductCount(index));
+
+   if (count < 1) {
+      deleteCurrentProduct();
+   }
+
+   const [open, setOpen] = useState(false);
+
+   const onClose = () => setOpen(false);
+
    return (
       <Box
          sx={{
@@ -15,7 +43,12 @@ export function Filling() {
             height: "149px",
          }}
       >
-         <FillingInfo />
+         <FillingInfo
+            size={size}
+            dough={dough}
+            id={id}
+            type={type}
+         />
          <Button
             variant="outlined"
             sx={{
@@ -27,6 +60,7 @@ export function Filling() {
                height: "16px",
                padding: "0px",
             }}
+            onClick={deleteCurrentProduct}
          >
             <SmallCross />
          </Button>
@@ -39,21 +73,34 @@ export function Filling() {
                   margin: "8px 8px 8px 0px",
                }}
             >
-               1000$
+               {price} тг.
             </Typography>
             <Box sx={{ display: "flex", alignItems: "center", marginLeft: "auto" }}>
-               <Link
+               <Button
                   sx={{
                      color: "rgb(255, 105, 0)",
                      ":hover": { color: "rgb(232, 97, 0)" },
-                     marginRight: "12px",
+                     fontSize: "14px",
+                     textTransform: "capitalize",
                   }}
+                  variant="outlined"
+                  onClick={() => setOpen(true)}
                >
                   Изменить
-               </Link>
-               <CountProducts />
+               </Button>
+               <CountProducts
+                  count={count}
+                  price={price}
+               />
             </Box>
          </Box>
+         <ModalProduct
+            open={open}
+            onClose={onClose}
+            id={id}
+            type={type}
+            change={index}
+         />
       </Box>
    );
 }

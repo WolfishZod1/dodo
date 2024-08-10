@@ -10,6 +10,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF1CB7AB16CECF87C419EF9EEFACA0.avif",
             price: 3150,
+            count: 1,
          },
          {
             name: "Вау! Кебаб",
@@ -17,7 +18,8 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
                "Мясо говядины, соус ранч, сыр моцарелла, сладкий перец, томаты, красный лук и фирменный томатный соус",
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF01FEE6DD7261A9C36187149758D0.avif",
-            price: 2950,
+            price: 2960,
+            count: 1,
          },
          {
             name: "Креветки со сладким чили",
@@ -26,6 +28,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF01FD3C2AC8E791770181C4A9C04D.avif",
             price: 2950,
+            count: 1,
          },
          {
             name: "Пицца из половинок",
@@ -33,6 +36,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE7D5FECCD3AC0B2E2C417625FCB02.avif",
             price: 3600,
+            count: 1,
          },
          {
             name: "Сырная 🌱👶",
@@ -40,6 +44,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE7D5F837255B58B25A62C60FFDB38.avif",
             price: 1850,
+            count: 1,
          },
          {
             name: "Чоризо фреш 🌶",
@@ -48,6 +53,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE7D5FBD0756A6AAA0BBEBA01B343A.avif",
             price: 2050,
+            count: 1,
          },
       ],
       combos: [
@@ -57,6 +63,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF168E1ECEE160827BC0ADE723E700.avif",
             price: 4550,
+            count: 1,
          },
          {
             name: "Летнее комбо",
@@ -65,6 +72,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF32003102C80A887E04629CE77DFA.avif",
             price: 1990,
+            count: 1,
          },
          {
             name: "Комбо Леди Баг",
@@ -73,6 +81,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF1D3B8F8987C7BD92CDD947AB9875.avif",
             price: 2500,
+            count: 1,
          },
          {
             name: "Комбо за 3900 ₸",
@@ -81,6 +90,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF0152C4EF8EA689865690AC33FA03.avif",
             price: 3900,
+            count: 1,
          },
          {
             name: "3 пиццы от 4900 ₸",
@@ -89,6 +99,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE7E215A2E0E04A2FB6BF3308D1AD5.avif",
             price: 4900,
+            count: 1,
          },
          {
             name: "2 пиццы",
@@ -97,6 +108,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE7E215D8C4FED8A0E004FEC01E713.avif",
             price: 5300,
+            count: 1,
          },
          {
             name: "3 пиццы",
@@ -105,6 +117,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE7E215EA3A03C84F00C3554992CAB.avif",
             price: 7700,
+            count: 1,
          },
       ],
       snacks: [
@@ -115,6 +128,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF020014EC43D6994F3D276D755531.avif",
             price: 1750,
+            count: 1,
          },
          {
             name: "Дэнвич ветчина и сыр",
@@ -123,6 +137,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE796F1967B5AF950A96DC718BF68D.avif",
             price: 1650,
+            count: 1,
          },
          {
             name: "Паста Береке",
@@ -131,6 +146,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF1CB59EC300549F00E230839643A5.avif",
             price: 2600,
+            count: 1,
          },
          {
             name: "Картофель из печи 🌱👶",
@@ -138,6 +154,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE85418A5A22A5BDB76CC58FE4EFB4.avif",
             price: 850,
+            count: 1,
          },
       ],
       cocktails: [
@@ -147,7 +164,8 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
                "Сливочная прохлада классического молочного коктейля с добавлением лесных ягод",
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF18D081A5575F9FD95A1400F504D8.avif",
-            price: 1950,
+            price: 1940,
+            count: 1,
          },
          {
             name: "Молочный коктейль Пина Колада",
@@ -155,6 +173,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF18D22CBC5C0AB6F22E982ACEC859.avif",
             price: 1950,
+            count: 1,
          },
          {
             name: "Молочный коктейль с печеньем Орео",
@@ -162,7 +181,8 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
                "Как вкуснее есть печенье? Его лучше пить! Попробуйте молочный коктейль с мороженым и дробленым печеньем «Орео»",
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE796EDC8861BC860E43989A45C019.avif",
-            price: 1950,
+            price: 1960,
+            count: 1,
          },
          {
             name: "Классический молочный коктейль 👶",
@@ -171,6 +191,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE796ECF42909DB401D3BFF796742E.avif",
             price: 1600,
+            count: 1,
          },
       ],
       coffee: [
@@ -180,6 +201,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE7D5FD56D201B860BF98EFA2DCA48.avif",
             price: 1100,
+            count: 1,
          },
          {
             name: "Кофе Американо",
@@ -187,6 +209,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE7D5FEC6640C5A109F430EB09FD02.avif",
             price: 800,
+            count: 1,
          },
       ],
       childrenLove: [
@@ -196,6 +219,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE7D5F837255B58B25A62C60FFDB38.avif",
             price: 1850,
+            count: 1,
          },
          {
             name: "Комбо Леди Баг",
@@ -204,6 +228,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF1D3B8F8987C7BD92CDD947AB9875.avif",
             price: 2500,
+            count: 1,
          },
 
          {
@@ -212,6 +237,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE85418A5A22A5BDB76CC58FE4EFB4.avif",
             price: 850,
+            count: 1,
          },
          {
             name: "Додо-клюв",
@@ -219,6 +245,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE796ECBCD7897810115092E7469A6.avif",
             price: 70,
+            count: 1,
          },
       ],
       beverages: [
@@ -229,6 +256,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE796F1E930BCBBEA5F68F5CBDB82F.avif",
             price: 800,
+            count: 1,
          },
          {
             name: "Pepsi",
@@ -236,6 +264,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF015215F8CC9094724B66F59D0D9E.avif",
             price: 550,
+            count: 1,
          },
          {
             name: "Pepsi Zero",
@@ -243,6 +272,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF01522D02FC228FCD9D3B847E5D7F.avif",
             price: 550,
+            count: 1,
          },
          {
             name: "7UP",
@@ -250,6 +280,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE7D5FE3C24295A8BB624018E41106.avif",
             price: 550,
+            count: 1,
          },
          {
             name: "Mirinda",
@@ -257,6 +288,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE7D5FE61E52FD98C08F0CCF44BFF2.avif",
             price: 550,
+            count: 1,
          },
          {
             name: "Чай Lipton черный с персиком",
@@ -264,6 +296,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE796EF2F13C2298E7B3B602051306.avif",
             price: 800,
+            count: 1,
          },
          {
             name: "Чай Lipton зеленый",
@@ -271,6 +304,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE796EF2CF16DF87982178BCC836E0.avif",
             price: 800,
+            count: 1,
          },
          {
             name: "Сок DaDa Зеленое яблоко",
@@ -278,6 +312,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EF128DF542F3839D61ED0A19E0D1D9.avif",
             price: 700,
+            count: 1,
          },
       ],
       sauces: [
@@ -288,6 +323,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE796ED49CBD1490B5F1C46A8F026E.avif",
             price: 400,
+            count: 1,
          },
          {
             name: "Соус Чесночный",
@@ -296,6 +332,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EEB05AC741F77388CF9BC3CF08F858.avif",
             price: 300,
+            count: 1,
          },
          {
             name: "Барбекю",
@@ -304,6 +341,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE796ED4D250A7970905C657FB3AB3.avif",
             price: 300,
+            count: 1,
          },
          {
             name: "Кетчуп",
@@ -312,6 +350,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE89B04B070B0D9A5F1579B8215856.avif",
             price: 300,
+            count: 1,
          },
       ],
       others: [
@@ -321,6 +360,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE796ECBCD7897810115092E7469A6.avif",
             price: 70,
+            count: 1,
          },
          {
             name: "Додо-колпак",
@@ -328,6 +368,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE796ECBFB3E78BBFF74AC4F743A21.avif",
             price: 150,
+            count: 1,
          },
          {
             name: "Додо-раскраска",
@@ -335,6 +376,7 @@ export const fetchProducts = createAsyncThunk<ProductsCatalog>("fetchProducts", 
             picture:
                "https://media.dodostatic.net/image/r:233x233/11EE796EDF209385BD2B4B878DA62DB2.avif",
             price: 150,
+            count: 1,
          },
       ],
    };

@@ -1,8 +1,17 @@
 import { Box, Button, Typography } from "@mui/material";
-import { useState } from "react";
+import {
+   decrementProductCount,
+   incrementProductCount,
+} from "@slices/productsBasket.slice/productsBasket.slice";
+import { useAppDispatch } from "@slices/store";
 
-export function CountProducts() {
-   const [count, setCount] = useState(1);
+interface Props {
+   price: number;
+   count: number;
+}
+
+export function CountProducts({ count, price }: Props) {
+   const dispatch = useAppDispatch();
    return (
       <Box
          sx={{
@@ -26,7 +35,7 @@ export function CountProducts() {
                alignItems: "center",
                minWidth: "0%",
             }}
-            onClick={() => setCount(count - 1)}
+            onClick={() => dispatch(decrementProductCount(price))}
          >
             <svg
                width="10"
@@ -65,7 +74,7 @@ export function CountProducts() {
                alignItems: "center",
                minWidth: "0%",
             }}
-            onClick={() => setCount(count + 1)}
+            onClick={() => dispatch(incrementProductCount(price))}
          >
             <svg
                width="10"

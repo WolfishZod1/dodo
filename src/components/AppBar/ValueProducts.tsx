@@ -1,12 +1,18 @@
 import { Box, Button, Divider, Typography } from "@mui/material";
+import { selectProductPrice, selectProductsCount } from "@selectors/productsBasket.selector";
+import { useSelector } from "react-redux";
 
 export function ValueProducts() {
+   const count = useSelector(selectProductsCount);
+   const price = useSelector(selectProductPrice);
    return (
       <Box
          sx={{
             backgroundColor: "rgb(255, 255, 255)",
             boxShadow: "rgba(6, 5, 50, 0.1) 0px -2px 4px",
-            paddingBottom: "36px",
+            position: "fixed",
+            bottom: "0px",
+            width: "30%",
          }}
       >
          <Box sx={{ width: "100%", padding: "16px 24px 0px " }}>
@@ -24,7 +30,7 @@ export function ValueProducts() {
             <Divider />
          </Box>
          <Box sx={{ padding: "16px 24px 24px" }}>
-            <Box sx={{ paddingBottom: "16px", marginBottom: "16px" }}>
+            <Box>
                <Box
                   sx={{
                      display: "flex",
@@ -35,10 +41,10 @@ export function ValueProducts() {
                   }}
                >
                   <Typography sx={{ fontSize: "12px", fontWeight: 600, lineHeight: "14px" }}>
-                     25 товаров
+                     {count} товаров
                   </Typography>
                   <Typography sx={{ fontSize: "12px", fontWeight: 600, lineHeight: "14px" }}>
-                     110 100 тг.
+                     {price} тг.
                   </Typography>
                </Box>
                <Box
@@ -53,7 +59,7 @@ export function ValueProducts() {
                      Начислим додокоины
                   </Typography>
                   <Typography sx={{ fontSize: "12px", fontWeight: 600, lineHeight: "14px" }}>
-                     +5 505
+                     +{Math.round(price * 0.05)}
                   </Typography>
                </Box>
                <Divider />
@@ -63,16 +69,13 @@ export function ValueProducts() {
             sx={{
                display: "flex",
                justifyContent: "space-between",
-               position: "fixed",
                height: "72px",
-               width: "30%",
                padding: "12px 16px",
                backgroundColor: "rgb(255, 255, 255)",
-               bottom: "0px",
             }}
          >
             <Box sx={{ display: "flex", alignItems: "center", width: "128px" }}>
-               <Typography sx={{ fontSize: "18px", lineHeight: "18px" }}>110 100 тг.</Typography>
+               <Typography sx={{ fontSize: "18px", lineHeight: "18px" }}>{price} тг.</Typography>
             </Box>
             <Button
                variant="contained"

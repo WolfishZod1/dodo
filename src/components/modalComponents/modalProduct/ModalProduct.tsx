@@ -14,10 +14,10 @@ interface Props {
    onClose: () => void;
    id: number;
    type: ProductsCategories;
-   price: number;
+   change?: number;
 }
 
-export function ModalProduct({ open, onClose, id, type, price }: Props) {
+export function ModalProduct({ open, onClose, id, type, change }: Props) {
    const [sizeProduct, setSizeProduct] = useState(30);
 
    const [dough, setDough] = useState("традиционное");
@@ -92,8 +92,18 @@ export function ModalProduct({ open, onClose, id, type, price }: Props) {
                   </Box>
                   <DispatchToBasket
                      price={
-                        sizeProduct === 25 ? price : sizeProduct === 30 ? price * 1.5 : price * 1.9
+                        sizeProduct === 25
+                           ? product.price
+                           : sizeProduct === 30
+                             ? product.price * 1.5
+                             : product.price * 1.9
                      }
+                     id={id}
+                     type={type}
+                     dough={dough}
+                     size={sizeProduct}
+                     onClose={onClose}
+                     change={change}
                   />
                </Box>
             </Box>
